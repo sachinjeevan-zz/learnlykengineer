@@ -21,9 +21,7 @@
       <div class="menu-container">
         <ul class="menu">
           <% if user_signed_in? %>
-          <li class="menu-link"><a class="link" href="#">Practice</a></li>
-          <li class="menu-link"><a class="link" href="#">Compete</a></li>
-          <li class="menu-link"><a class="link" href="#">Tutorials</a></li>
+          <h1> welcome </h1>
 
           <li class="menu-link"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
          <% else %>
