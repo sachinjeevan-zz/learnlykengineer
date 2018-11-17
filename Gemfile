@@ -11,9 +11,10 @@ gem 'rails', '~> 5.1.6'
 gem 'devise'
 gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'jquery-rails'
-gem 'pg', '~> 1.1', '>= 1.1.3'
+gem 'foundation-rails'
+gem 'jquery-turbolinks'
 # Use sqlite3 as the database for Active Record
-
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

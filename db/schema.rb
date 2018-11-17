@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 20181116181150) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "email_confirmed"
-    t.string "confirm_token"
     t.datetime "confirmed_at"
     t.string "confirmation_token"
     t.datetime "confirmation_sent_at"
