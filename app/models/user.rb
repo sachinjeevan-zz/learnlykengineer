@@ -4,15 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :trackable,
          :recoverable, :rememberable, :validatable, :omniauthable
          
-         def self.from_omniauth(auth)
-  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-    user.email = auth.info.email
-    user.password = Devise.friendly_token[0,20]
-    # If you are using confirmable and the provider(s) you use validate emails, 
-    # uncomment the line below to skip the confirmation emails.
-    # user.skip_confirmation!
-  end
-end
+        def self.create_with_omniauth(auth)
+   create! do |user|
+     user.provider = auth['provider']
+     user.uid = auth['uid']
+     if auth['info']
+       user.name = auth['info']['name'] || ""
+       user.email = auth['info']['email'] || ""
+     end
+   end
+ end
 
 def self.new_with_session(params, session)
     super.tap do |user|

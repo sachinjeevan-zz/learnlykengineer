@@ -28,7 +28,7 @@ Devise.setup do |config|
                   token_params: { parse: :json },
                   scope: "public_profile, email",
                   secure_image_url: true,
-                  info_fields: "first_name,last_name,picture,name,email"
+                  info_fields: "rails g controller sessionsname,email"
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
