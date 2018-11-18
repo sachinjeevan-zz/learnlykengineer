@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'jquery-turbolinks'
 # Use sqlite3 as the database for Active Record
+gem 'sprockets'
 gem 'pg'
 gem 'rake'
 gem 'omniauth-facebook'
