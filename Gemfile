@@ -13,6 +13,7 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'jquery-turbolinks'
+gem 'omniauth-facebook'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use Puma as the app server

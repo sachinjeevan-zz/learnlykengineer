@@ -25,7 +25,7 @@ Devise.setup do |config|
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
-
+config.omniauth :facebook, "364948830740939", "914fe7316f1bdc208ae2071aa581dd99", callback_url: "https://learnlykengineer.herokuapp.com/users/auth/facebook/callback"
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
