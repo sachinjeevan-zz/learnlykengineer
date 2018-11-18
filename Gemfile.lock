@@ -250,6 +250,7 @@ DEPENDENCIES
   rake
   sass-rails (~> 5.0)
   selenium-webdriver
+  sprockets
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
