@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  config.secret_key_base = "3d2e8d781e43475a137c1f0a69dd941c46272e63ad83f58377c3ce69c4421a6f8ee5f5d52b7c3262c800edfb1c7430ead6a234c3edf61ccf5ad1567496c3949b"
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -61,7 +61,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "learnlykengineer_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  RAILS_ENV=production bundle exec rake assets:precompile
+  
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
