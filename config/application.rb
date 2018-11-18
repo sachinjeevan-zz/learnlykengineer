@@ -1,6 +1,10 @@
 require_relative 'boot'
+begin
+  require 'rails/all'
+rescue LoadError => e
+  raise e unless ENV['RAILS_ENV'] == "production"
+end
 
-require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
