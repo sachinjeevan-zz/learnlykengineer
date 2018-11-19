@@ -12,15 +12,14 @@ class User < ApplicationRecord
           end
         end
 
-        def self.from_omniauth(auth)
-          where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
-            user.email = auth.info.email
-            user.password = Devise.friendly_token[0,20]
+        def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
+          data = access_token.extra.raw_info
+          if user = User.where(:email => data.email).first
+            user
+          else # Create a user with a stub password. 
+            user = User.new(:email => data.email, :password => Devise.friendly_token[0,20])
             user.skip_confirmation!
-            user.save!
-            # If you are using confirmable and the provider(s) you use validate emails, 
-            # uncomment the line below to skip the confirmation emails.
-            # user.skip_confirmation!
+            user.save! 
           end
         end
  end
