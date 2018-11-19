@@ -1,35 +1,77 @@
-<div class="row justify-content-md-center" style="color:white;padding-top: 100px;">
-  <div class="col-sm-4" >
-    <h3 class="text-center">Sign up</h3>
-    <br>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <% if resource.errors.any? %>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="../users/sign_in">LearnLykEngineer</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../users/sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../users/sign_up">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div style="padding-top: 7%;">
+<div class="container">
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign Up</h5>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <% if resource.errors.any? %>
         <div class="alert alert-danger alert-dismissable">
           <%= resource.errors.full_messages.first %>
           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+         
+          </div>
+          <% end %>
+              
+              <form class="form-signin">
+              <div class="form-label-group">
+              <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: 'email@example.com' %>
+                <%= f.label :email %>
+              </div>
+
+              <div class="form-label-group">
+              <%= f.password_field :password, class: 'form-control', autofocus: true, autocomplete: 'off', placeholder: 'password' %>
+              <%= f.label :password %>
+                
+              </div>
+              <div class="form-label-group">
+              <%= f.password_field :password_confirmation, class: 'form-control', autofocus: true, autocomplete: 'off', placeholder: 'password confirmation' %>
+                
+              <%= f.label :password_confirmation %>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              
+        <%= f.submit 'Sign up', class: 'btn btn-primary btn-lg  btn-block text-uppercase' %>
+      
+            
+              </form>
+              <% end %>
+          </div>
+          </div>
         </div>
-      <% end %>
-
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', placeholder: 'email@example.com' %>
       </div>
-      <div class="form-group">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br>
-        <%= f.password_field :password, class: 'form-control', autocomplete: 'off', placeholder: 'password' %>
       </div>
-      <div class="form-group">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: 'off', placeholder: 'password confirmation' %>
-      </div>
-      <div class="actions">
-        <%= f.submit 'Sign up', class: 'btn btn-success' %>
-      </div>
-    <% end %>
-    <br>
-
+    </div>
   </div>
-</div>
+

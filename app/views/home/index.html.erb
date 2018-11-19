@@ -1,14 +1,53 @@
-<div   style="color:white;padding-top: 15%;"  >
+<div style="padding-top: 2%;">
 <div class="container">
-<div class="row">
-  <div class="col-sm-6" >
-   <h1>Log in for Students</h1>
-  <a href="../users/sign_in"> <button type="button" class="btn btn-primary btn-lg btn-block" >Log In</button></a>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <% if resource.errors.any? %>
+        <div class="alert alert-danger alert-dismissable">
+          <%= resource.errors.full_messages.first %>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        </div>
+      <% end %>
+              
+              <form class="form-signin">
+              <div class="form-label-group">
+              <%= f.email_field :email, class: 'form-control', placeholder: 'email@example.com' %>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+              <%= f.password_field :password, class: 'form-control', autocomplete: 'off', placeholder: 'password' %>
+                
+                <label> for="inputPassword">Password</label>
+              </div>
+              <div class="form-label-group">
+              <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: 'off', placeholder: 'password confirmation' %>
+                
+                <label> for="inputPassword">Password</label>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <div class="actions">
+        <%= f.submit 'Sign up', class: 'btn btn-lg btn-primary btn-block text-uppercase' %>
+      </div>
+            
+              </form>
+              <% end %>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-6" >
-  <h1>Log in for Admin</h1>
-  <a href="../admin"><button type="button" class="btn btn-primary btn-lg btn-block" >Log In</button></a>
-  </div>
-</div>
-</div> 
-</div>
+
