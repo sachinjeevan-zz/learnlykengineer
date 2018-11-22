@@ -6,7 +6,18 @@
 @import 'https://fonts.googleapis.com/css?family=Calligraffitti';
 @import 'https://fonts.googleapis.com/css?family=Montserrat';
 $red: #ce3745;
+.grid_item {
+  
+  display: inline-block;
+  background: none;
+  padding: 10px;
+  position: relative;
 
+  @media (min-width: 500px) {
+      
+      float: left;
+  }
+}
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
