@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   authenticated :user do
     root :to => "courses#index"
   end
-root :to => redirect("/users/sign_in")
+root :to => redirect("/home")
   
 end
